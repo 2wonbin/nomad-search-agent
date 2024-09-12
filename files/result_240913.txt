@@ -1,0 +1,26 @@
+# XZ Backdoor Overview
+
+In February 2024, a malicious backdoor was introduced to the Linux utility XZ within the liblzma library in versions 5.6.0 and 5.6.1 by an account using the name "Jia Tan". This backdoor allows an attacker who possesses a specific Ed448 private key to execute remote code on the affected Linux systems. The vulnerability has been assigned the Common Vulnerabilities and Exposures (CVE) number CVE-2024-3094 and has a CVSS score of 10.0, indicating a critical severity level.
+
+## Impact and Discovery
+
+The XZ utility is commonly included in most Linux distributions, but at the time of the backdoor's discovery, the compromised versions had not been widely deployed in production systems. They were primarily present in development versions of major distributions. The backdoor was discovered by software developer Andres Freund, who announced his findings on March 29, 2024.
+
+## Functionality of the Backdoor
+
+The malicious code modified the functionality of the XZ utility, specifically targeting the SSH daemon (sshd), which is responsible for handling secure shell connections. By exploiting this backdoor, unauthorized users could gain remote access to systems, potentially compromising sensitive data and system integrity.
+
+## Security Implications
+
+The introduction of the XZ backdoor raises significant concerns regarding the security of open-source software and supply chain integrity. It highlights the risks associated with relying on third-party libraries and the importance of rigorous code review processes in open-source projects.
+
+## Conclusion
+
+The XZ backdoor incident serves as a reminder of the vulnerabilities that can arise in software supply chains and the need for continuous vigilance in maintaining software security. Organizations using affected versions of XZ are advised to upgrade to non-compromised versions to mitigate risks.
+
+## Sources
+- [XZ Utils backdoor - Wikipedia](https://en.wikipedia.org/wiki/XZ_Utils_backdoor)
+- [The XZ Backdoor: Everything You Need to Know | WIRED](https://www.wired.com/story/xz-backdoor-everything-you-need-to-know/)
+- [The Mystery of 'Jia Tan,' the XZ Backdoor Mastermind | WIRED](https://www.wired.com/story/jia-tan-xz-backdoor/)
+- [How the XZ backdoor works | LWN.net](https://lwn.net/Articles/967192/)
+- [Dangerous XZ Utils backdoor was the result of years-long supply chain compromise effort | CSO Online](https://www.csoonline.com/article/2077692/dangerous-xz-utils-backdoor-was-the-result-of-years-long-supply-chain-compromise-effort.html)
